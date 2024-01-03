@@ -1,0 +1,265 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navigation ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* RWD 部分 */
+@media screen and (max-width: 600px) {
+    .navigation ul {
+        display: none;
+    }
+
+    .navigation a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .navigation a.icon {
+        display: none;
+    }
+}
+
+/* Clearfix hack to prevent container collapse */
+.navigation:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.banner img{
+    width: 100%;
+    height: 250px;
+    display: block; /* 解決圖片底部留白問題 */
+    
+}
+
+/* 來信留言css */
+
+
+  
+.namecard {
+    width: 350px;
+    height: 180px;
+    padding: 25px;
+    position: relative;
+    background: linear-gradient(#f2f2f2, #eee);
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    /* --------------------------------------------------- */
+    transition: all 0.5s; /* transition 教課時記得寫完動畫再加上此屬性*/
+  }
+  
+  .namecard .name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: -3px;
+    color: #AE57A4;
+  }
+  
+  .namecard .eng {
+    color: #36b9c1;
+  }
+  
+  .namecard .position {
+    color: #36b9c1;
+  }
+  
+  .namecard .intro {
+    padding-right: 150px;
+    /* 將intro推窄 */
+  }
+  
+  .namecard .intro .lineid .line {
+    color:green
+  }
+  
+  
+  
+  .wave {
+    width: 700px;
+    height: 700px;
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    background: #AE57A4;
+    border-radius: 40%;
+    /* transform-origin: 50% 48%; */
+    transition: left 2s;
+    animation: drift 6000ms infinite linear;
+    margin-left: 280px;
+  }
+  .wave.-three {
+    animation: drift 7000ms infinite linear;
+    margin-left: 270px;
+  }
+  
+  .wave.-two {
+    animation: drift 10000ms infinite linear;
+    background-color: #FFD9EC;
+    opacity: 0.1;
+    margin-left: 260px;
+  }
+  
+  .wave.right {
+    margin-top: -250px;
+  }
+  
+  @keyframes drift {
+    from {
+      transform: rotate(0deg);
+    }
+    from {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .namecard:hover {
+    transform: translate3d(-5px, -5px, 0);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    /* 滑鼠碰觸時讓卡片向左上飄移 */
+  }
+  
+  .namecard:hover .wave.right {
+    left: 70px;
+  }
+  
+  .frame {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+  }
+  button {
+    margin: 20px;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+  .btn-6 {
+    background: rgb(247,150,192);
+  background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-6 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-6:before,
+  .btn-6:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 1px;
+   box-shadow:
+     -1px -1px 20px 0px rgba(255,255,255,1),
+     -4px -4px 5px 0px rgba(255,255,255,1),
+     7px 7px 20px 0px rgba(0,0,0,.4),
+     4px 4px 5px 0px rgba(0,0,0,.3);
+  }
+  .btn-6:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+  }
+  .btn-6:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+  }
+  .btn-6:hover{
+    background: transparent;
+    color: #76aef1;
+    box-shadow: none;
+  }
+  .btn-6:hover:before {
+    transition: all 500ms ease;
+    height: 100%;
+  }
+  .btn-6:hover:after {
+    transition: all 500ms ease;
+    height: 100%;
+  }
+  .btn-6 span:before,
+  .btn-6 span:after {
+    position: absolute;
+    content: "";
+    box-shadow:
+     -1px -1px 20px 0px rgba(255,255,255,1),
+     -4px -4px 5px 0px rgba(255,255,255,1),
+     7px 7px 20px 0px rgba(0,0,0,.4),
+     4px 4px 5px 0px rgba(0,0,0,.3);
+  }
+  .btn-6 span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: .5px;
+    transition: all 500ms ease;
+  }
+  .btn-6 span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: .5px;
+    transition: all 500ms ease;
+  }
+  .btn-6 span:hover:before {
+    width: 100%;
+  }
+  .btn-6 span:hover:after {
+    width: 100%;
+  }
